@@ -13,8 +13,8 @@ impl Default for TemplateApp {
     fn default() -> Self {
         Self {
             // Example stuff:
-            label: "Hello World!".to_owned(),
-            value: 2.7,
+            label: "Hello World 234!".to_owned(),
+            value: 3.8,
         }
     }
 }
@@ -70,7 +70,7 @@ impl eframe::App for TemplateApp {
             ui.heading("eframe template");
 
             ui.horizontal(|ui| {
-                ui.label("Write something: ");
+                ui.label("Write something 123: ");
                 ui.text_edit_singleline(&mut self.label);
             });
 
