@@ -151,20 +151,20 @@ jobs:
           cross build --verbose --release --target=${{ matrix.TARGET }}
 
       - name: Rename
-        run: cp target/${{ matrix.TARGET }}/release/cprobst_egui_test${{ matrix.EXTENSION }} cprobst_egui_test-${{ matrix.TARGET }}${{ matrix.EXTENSION }}
+        run: cp target/${{ matrix.TARGET }}/release/chrisprobst_egui_test${{ matrix.EXTENSION }} chrisprobst_egui_test-${{ matrix.TARGET }}${{ matrix.EXTENSION }}
 
       - uses: actions/upload-artifact@master
         with:
-          name: cprobst_egui_test-${{ matrix.TARGET }}${{ matrix.EXTENSION }}
-          path: cprobst_egui_test-${{ matrix.TARGET }}${{ matrix.EXTENSION }}
+          name: chrisprobst_egui_test-${{ matrix.TARGET }}${{ matrix.EXTENSION }}
+          path: chrisprobst_egui_test-${{ matrix.TARGET }}${{ matrix.EXTENSION }}
 
       - uses: svenstaro/upload-release-action@v2
         name: Upload binaries to release
         if: ${{ github.event_name == 'push' }}
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: cprobst_egui_test-${{ matrix.TARGET }}${{ matrix.EXTENSION }}
-          asset_name: cprobst_egui_test-${{ matrix.TARGET }}${{ matrix.EXTENSION }}
+          file: chrisprobst_egui_test-${{ matrix.TARGET }}${{ matrix.EXTENSION }}
+          asset_name: chrisprobst_egui_test-${{ matrix.TARGET }}${{ matrix.EXTENSION }}
           tag: ${{ github.ref }}
           prerelease: ${{ !startsWith(github.ref, 'refs/tags/') }}
           overwrite: true
